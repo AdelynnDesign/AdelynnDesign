@@ -90,11 +90,6 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.display img:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
-}
-
 /* -------- FEATURED SIZES -------- */
 
 /* Big anchor image */
@@ -153,6 +148,7 @@ body {
 
 .extra-tall {
   grid-row: span 3;   /* 3x height */
+  grid-column: span 2;
 }
 
 .wide {
@@ -178,12 +174,14 @@ body {
   <div class="display">
 
     <!-- Large focal images -->
-    <img src="HomePhotos/1.jpg" class="tall">
+    <img src="HomePhotos/1.jpg" class="extra-tall">
     <img src="HomePhotos/21.jpg" class="wide">
 
     <!-- Natural aspect images -->
-    <img src="HomePhotos/5.jpg" class="natural">
+    <img src="HomePhotos/5.jpg" class="wide">
     <img src="HomePhotos/6.jpg" class="natural wide">
+    <img src="HomePhotos/3.JPG" class="tall">
+
 
     <!-- Standard grid images -->
     <img src="HomePhotos/7.jpg" class="tall">
@@ -195,12 +193,12 @@ body {
     <img src="HomePhotos/10.jpg" class="tall">
     <img src="HomePhotos/11.jpg" >
     <img src="HomePhotos/12.jpg">
-    <img src="HomePhotos/13.jpg">
+    <img src="HomePhotos/13.jpg" class="tall">
 
     <!-- Finish strong -->
-    <img src="HomePhotos/19.jpg">
+    <img src="HomePhotos/19.jpg" class="wide">
     <img src="HomePhotos/14.jpg" class="tall">
-    <img src="HomePhotos/16.jpg">
+    <img src="HomePhotos/16.jpg" class="tall">
     <img src="HomePhotos/17.jpg">
 
   </div>
