@@ -13,6 +13,8 @@ body {
   background-color: #f5f7f5;
 }
 
+/* ---------- SIDEBAR ---------- */
+
 .sidebar-logo {
   margin-bottom: 1em;
   width: 100%;
@@ -40,7 +42,7 @@ body {
 }
 
 .sidebar a {
-  color: #000000;
+  color: #000;
   text-decoration: none;
   margin: 0.8em 0;
   font-size: 0.95em;
@@ -53,9 +55,11 @@ body {
 
 .sidebar a:hover {
   background-color: rgba(255, 255, 255, 0.2);
-  color: #ffffff;
+  color: #fff;
   transform: translateX(3px);
 }
+
+/* ---------- CONTENT ---------- */
 
 .content {
   flex: 1;
@@ -67,37 +71,95 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
+/* ---------- GALLERY ---------- */
+
 .display {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-auto-rows: 180px;
+  grid-auto-flow: dense;
   gap: 1em;
-  position: relative;
 }
 
 .display img {
   width: 100%;
-  height: 350px;
-  object-fit: cover;
+  height: 100%;
+  object-fit: cover; /* no distortion */
   border-radius: 8px;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
 }
 
-.display img:nth-child(1n+1) {
-  transform: translateY(0);
-}
-.display img:nth-child(2n+2) {
-  transform: translateY(15px);
-}
-.display img:nth-child(3n+3) {
-  transform: translateY(30px);
+.display img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
 }
 
+/* -------- FEATURED SIZES -------- */
+
+/* Big anchor image */
+.featured {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+/* Wide image */
+.wide {
+  grid-column: span 2;
+}
+
+/* Tall image */
+.tall {
+  grid-row: span 2;
+}
+
+/* Natural aspect (no crop) */
+.natural {
+  object-fit: contain;
+  background: #f3f3f3;
+}
 
 
+/* ---------- SIZE VARIANTS ---------- */
 
-</style>
+/* Wide emphasis images */
+.wide {
+  grid-column: span 2;
+}
+
+/* Extra wide hero images */
+.extra-wide {
+  grid-column: span 3;
+}
+
+/* Natural-size images (no distortion) */
+.natural {
+  height: auto;
+  object-fit: contain;
+  background: #f2f2f2;
+  padding: 0.5em;
+}
+
+/* Natural + wide */
+.natural.wide {
+  grid-column: span 2;
+}
+
+
+.tall {
+  grid-row: span 3;   /* 2x height */
+  grid-column: span 2;
+}
+
+.extra-tall {
+  grid-row: span 3;   /* 3x height */
+}
+
+.wide {
+  grid-column: span 2; /* optional: wider images */
+}
+
+  </style>
 </head>
 
 <body>
@@ -113,28 +175,35 @@ body {
 </nav>
 
 <main class="content">
-
   <div class="display">
-    <img src="HomePhotos/1.jpg" alt="Gallery Image 1">
-    <img src="HomePhotos/21.jpg" alt="Gallery Image 1">
-    <img src="HomePhotos/5.jpg" alt="Gallery Image 1">
-    <img src="HomePhotos/6.jpg" alt="Gallery Image 1">
-    <img src="HomePhotos/7.jpg" alt="Gallery Image 1">
-    <img src="HomePhotos/18.jpg" alt="Gallery Image 1">
-    <img src="HomePhotos/8.jpg" alt="Gallery Image 1">
-    <img src="HomePhotos/20.jpg" alt="Gallery Image 1">
-    <img src="HomePhotos/10.jpg" alt="Gallery Image 1">
-    <img src="HomePhotos/11.jpg" alt="Gallery Image 1">
-    <img src="HomePhotos/12.jpg" alt="Gallery Image 1">
-    <img src="HomePhotos/13.jpg" alt="Gallery Image 1">
-    <img src="HomePhotos/19.jpg" alt="Gallery Image 1">
-    <img src="HomePhotos/14.jpg" alt="Gallery Image 1">
-    <img src="HomePhotos/16.jpg" alt="Gallery Image 1">
-    <img src="HomePhotos/17.jpg" alt="Gallery Image 1">
 
+    <!-- Large focal images -->
+    <img src="HomePhotos/1.jpg" class="tall">
+    <img src="HomePhotos/21.jpg" class="wide">
+
+    <!-- Natural aspect images -->
+    <img src="HomePhotos/5.jpg" class="natural">
+    <img src="HomePhotos/6.jpg" class="natural wide">
+
+    <!-- Standard grid images -->
+    <img src="HomePhotos/7.jpg" class="tall">
+    <img src="HomePhotos/18.jpg">
+    <img src="HomePhotos/8.jpg"class="tall">
+    <img src="HomePhotos/20.jpg">
+
+    <!-- More natural / wide mix -->
+    <img src="HomePhotos/10.jpg" class="tall">
+    <img src="HomePhotos/11.jpg" >
+    <img src="HomePhotos/12.jpg">
+    <img src="HomePhotos/13.jpg">
+
+    <!-- Finish strong -->
+    <img src="HomePhotos/19.jpg">
+    <img src="HomePhotos/14.jpg" class="tall">
+    <img src="HomePhotos/16.jpg">
+    <img src="HomePhotos/17.jpg">
 
   </div>
-
 </main>
 
 </body>
